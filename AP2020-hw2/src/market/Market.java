@@ -19,4 +19,6 @@ public class Market {
     private Market(){
 
     }
+
+    private static
 }
