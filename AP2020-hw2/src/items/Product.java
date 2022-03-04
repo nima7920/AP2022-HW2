@@ -1,15 +1,23 @@
 package items;
 
-public class Product {
-    private String name;
-    private long id;
+import users.User;
 
-    public Product(String name, long id) {
+public class Product {
+    protected String name;
+    protected User user;
+    protected long id;
+
+    public Product(String name,User user) {
         if(name.length()<1 || name.length()>80){
             System.out.println("Invalid Product name");
             return;
         }
         this.name = name;
-        this.id = id;
+        this.user=user;
+        generateID();
+    }
+
+    private void generateID(){
+        this.id=System.nanoTime();
     }
 }
