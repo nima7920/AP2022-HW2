@@ -1,12 +1,12 @@
 package items;
 
-public class guarantee extends Service{
+public class Guarantee extends Service{
     private GuaranteeType type;
     private int duration;
     private Good good;
     private long goodID, userID;
 
-    public guarantee(GuaranteeType type, int duration, Good good, long goodID, long userID) {
+    public Guarantee(GuaranteeType type, int duration, Good good, long goodID, long userID) {
         this.type = type;
         this.duration = duration;
         this.good = good;

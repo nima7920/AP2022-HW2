@@ -20,5 +20,30 @@ public class User {
         this.phone = phone;
     }
 
+    // getters and setters
 
+
+    public String getName() {
+        return name;
+    }
+
+    public long getPhone() {
+        return phone;
+    }
+
+    public float getCredit() {
+        return credit;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public List<Product> getCart() {
+        return cart;
+    }
 }

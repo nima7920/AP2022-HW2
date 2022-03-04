@@ -37,28 +37,41 @@ public class Market {
     public Member getMember(long phone){
 
         for(User member:users){
-
+            if(member instanceof User && member.getPhone()==phone)
+                return (Member) member;
         }
         return null;
     }
 
     public User getUser(long id){
-
+        for(User user:users){
+            if(user.getId()==id)
+                return user;
+        }
         return null;
     }
 
     public Product getProduct(long id){
-
+        for(Product product:products){
+            if(product.getId()==id)
+                return product;
+        }
         return null;
     }
 
     public Good getGood(long id){
-
+        for(Product product:products){
+            if(product instanceof Good && product.getId()==id)
+                return ((Good) product);
+        }
         return null;
     }
 
     public Service getService(long id){
-
+        for(Product product:products){
+            if(product instanceof Service && product.getId()==id)
+                return ((Service) product);
+        }
         return null;
     }
 
