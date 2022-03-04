@@ -8,12 +8,12 @@ public class User {
     /**
      * User class, with subclasses manager and member
      */
-    private String name;
-    private long phone;
-    private float credit;
-    private boolean active;
-    private int id;
-    private List<Product> cart;
+    protected String name;
+    protected long phone;
+    protected float credit;
+    protected boolean active;
+    protected int id;
+    protected List<Product> cart;
 
     public User(String name, long phone) {
         this.name = name;
