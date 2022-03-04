@@ -75,4 +75,7 @@ public class Market {
         return null;
     }
 
+    public void addProduct(Product product){
+        this.products.add(product);
+    }
 }

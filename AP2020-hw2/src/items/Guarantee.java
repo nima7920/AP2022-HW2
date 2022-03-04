@@ -1,12 +1,15 @@
 package items;
 
+import market.Market;
+
 public class Guarantee extends Service{
     private GuaranteeType type;
     private int duration;
     private Good good;
     private long goodID, userID;
 
-    public Guarantee(GuaranteeType type, int duration, Good good, long goodID, long userID) {
+    public Guarantee(String name,GuaranteeType type, int duration, Good good, long goodID, long userID) {
+        super(name, Market.getInstance().getUser(userID));
         this.type = type;
         this.duration = duration;
         this.good = good;

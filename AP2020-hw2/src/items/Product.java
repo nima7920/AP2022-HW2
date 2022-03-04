@@ -1,11 +1,13 @@
 package items;
 
+import market.Market;
 import users.User;
 
 public class Product {
     protected String name;
     protected User user;
     protected long id;
+    protected Market market=Market.getInstance();
 
     public Product(String name,User user) {
         if(name.length()<1 || name.length()>80){
