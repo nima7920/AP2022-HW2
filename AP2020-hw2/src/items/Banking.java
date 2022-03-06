@@ -1,10 +1,15 @@
 package items;
 
+import users.User;
+
 public class Banking extends Service{
 
     private AccountType type;
     private float ratio;
 
+    public Banking(String name, User user) {
+        super(name, user);
+    }
 
 
     public AccountType getType() {

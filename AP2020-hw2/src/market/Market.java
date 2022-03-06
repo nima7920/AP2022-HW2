@@ -34,10 +34,10 @@ public class Market {
 
     }
 
-    public Member getMember(long phone){
+    public Member getMember(long id){
 
         for(User member:users){
-            if(member instanceof User && member.getPhone()==phone)
+            if(member instanceof Member && member.getId()==id)
                 return (Member) member;
         }
         return null;

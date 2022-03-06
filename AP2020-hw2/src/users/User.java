@@ -12,7 +12,7 @@ public class User {
     protected long phone;
     protected float credit;
     protected boolean active;
-    protected int id;
+    protected long id;
     protected List<Product> cart;
 
     public User(String name, long phone) {
@@ -39,7 +39,7 @@ public class User {
         return active;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

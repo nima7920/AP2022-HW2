@@ -14,4 +14,21 @@ public class Car extends Good{
         this.builtYear = builtYear;
         this.hadAccident = hadAccident;
     }
+
+
+    public int getPrice() {
+        return price;
+    }
+
+    public double getUsed() {
+        return used;
+    }
+
+    public int getBuiltYear() {
+        return builtYear;
+    }
+
+    public boolean isHadAccident() {
+        return hadAccident;
+    }
 }
