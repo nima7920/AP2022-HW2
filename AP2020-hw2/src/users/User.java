@@ -46,4 +46,11 @@ public class User {
     public List<Product> getCart() {
         return cart;
     }
+    public double getTotalPrice(){
+        double res = 0;
+        for (Product product : cart) {
+            res += product.getPrice();
+        }
+        return res;
+    }
 }

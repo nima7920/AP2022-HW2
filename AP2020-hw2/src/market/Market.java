@@ -1,6 +1,7 @@
 package market;
 
 import items.Good;
+import items.Guarantee;
 import items.Product;
 import items.Service;
 import users.Member;
@@ -77,5 +78,21 @@ public class Market {
 
     public void addProduct(Product product){
         this.products.add(product);
+    }
+    public void addToCart(int userID, int productID){
+        User user = getUser(userID);
+        Product product = getProduct(productID);
+        if (user == null || product == null){
+            System.out.println("invalid ID");
+            return;
+        }
+        if (product instanceof Guarantee){
+            Good good = ((Guarantee) product).getGood();
+            if (!user.getCart().contains(good)){
+                System.out.println("product has not been added");
+                return;
+            }
+        }
+        user.getCart().add(product);
     }
 }
