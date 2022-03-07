@@ -2,12 +2,12 @@ package items;
 
 public class Car extends Good{
 
-    private int price;
+    private double price;
     private double used;
     private int builtYear;
     private boolean hadAccident;
 
-    public Car(String name, long userID, int price, double used, int builtYear, boolean hadAccident) {
+    public Car(String name, long userID, double price, double used, int builtYear, boolean hadAccident) {
         super(name, userID);
         this.price = price;
         this.used = used;
@@ -15,8 +15,8 @@ public class Car extends Good{
         this.hadAccident = hadAccident;
     }
 
-
-    public int getPrice() {
+    @Override
+    public double getPrice() {
         return price;
     }
 

@@ -10,7 +10,7 @@ public class User {
      */
     protected String name;
     protected long phone;
-    protected float credit;
+    protected double credit;
     protected boolean active;
     protected long id;
     protected List<Product> cart;
@@ -31,7 +31,7 @@ public class User {
         return phone;
     }
 
-    public float getCredit() {
+    public double getCredit() {
         return credit;
     }
 
@@ -52,5 +52,9 @@ public class User {
             res += product.getPrice();
         }
         return res;
+    }
+
+    public void setCredit(double credit){
+        this.credit=credit;
     }
 }

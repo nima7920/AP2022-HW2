@@ -23,6 +23,9 @@ public class Product {
         this.id=System.nanoTime();
     }
 
+    public double getPrice(){
+        return 0;
+    }
 
     // getters and setters
     public String getName() {
