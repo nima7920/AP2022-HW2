@@ -1,18 +1,19 @@
 package items;
 
+import users.User;
+
 public class Property extends Good{
 
     private int price;
     private int builtYear;
     private int area;
-    private long userID;
 
-    public Property(String name, long userID, int price, int builtYear, int area, long userID1) {
-        super(name, userID);
+
+    public Property(String name, User user, int price, int builtYear, int area, long userID1) {
+        super(name, user);
         this.price = price;
         this.builtYear = builtYear;
         this.area = area;
-        this.userID = userID1;
     }
 
     @Override
@@ -40,11 +41,4 @@ public class Property extends Good{
         this.area = area;
     }
 
-    public long getUserID() {
-        return userID;
-    }
-
-    public void setUserID(long userID) {
-        this.userID = userID;
-    }
 }

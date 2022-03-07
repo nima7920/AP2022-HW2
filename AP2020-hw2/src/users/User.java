@@ -2,6 +2,7 @@ package users;
 
 import items.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -9,37 +10,43 @@ public class User {
      * User class, with subclasses manager and member
      */
     protected String name;
-    protected long phone;
+    protected long phoneNumber;
     protected double credit;
-    protected boolean active;
-    protected long id;
+    protected int id;
     protected List<Product> cart;
-
-    public User(String name, long phone) {
+    protected static int userCount = 1000 * 1000;
+    public User(String name, long phoneNumber) {
         this.name = name;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
+        this.id = userCount++;
+        this.cart = new ArrayList<Product>();
     }
 
     // getters and setters
 
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getName() {
         return name;
     }
 
-    public long getPhone() {
-        return phone;
+    public long getPhoneNumber() {
+        return phoneNumber;
     }
 
     public double getCredit() {
         return credit;
     }
 
-    public boolean isActive() {
-        return active;
-    }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

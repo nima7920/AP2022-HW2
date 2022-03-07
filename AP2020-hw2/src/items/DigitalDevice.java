@@ -1,5 +1,7 @@
 package items;
 
+import users.User;
+
 public class DigitalDevice extends Good{
 
     private int memory;
@@ -7,8 +9,8 @@ public class DigitalDevice extends Good{
     private Display display;
     private DigitalDeviceType type;
 
-    public DigitalDevice(String name, long userID, int memory, Battery battery, Display display, DigitalDeviceType type) {
-        super(name, userID);
+    public DigitalDevice(String name, User user, int memory, Battery battery, Display display, DigitalDeviceType type) {
+        super(name, user);
         this.memory = memory;
         this.battery = battery;
         this.display = display;

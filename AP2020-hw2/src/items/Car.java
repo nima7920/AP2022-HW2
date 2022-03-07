@@ -1,17 +1,19 @@
 package items;
 
+import users.User;
+
 public class Car extends Good{
 
     private double price;
-    private double used;
-    private int builtYear;
+    private double distanceTraveled;
+    private int manufacturingYear;
     private boolean hadAccident;
 
-    public Car(String name, long userID, double price, double used, int builtYear, boolean hadAccident) {
-        super(name, userID);
+    public Car(String name, User user, double price, double distanceTraveled, int manufacturingYear, boolean hadAccident) {
+        super(name, user);
         this.price = price;
-        this.used = used;
-        this.builtYear = builtYear;
+        this.distanceTraveled = distanceTraveled;
+        this.manufacturingYear = manufacturingYear;
         this.hadAccident = hadAccident;
     }
 
@@ -20,7 +22,7 @@ public class Car extends Good{
     public double getPrice() {
         int flag = 0;
         if (hadAccident) flag = 1;
-        return (price / (used / Math.pow(10, 4))) * (flag * 0.3 + (1 - flag)) - (1400 - builtYear);
+        return (price / (distanceTraveled / Math.pow(10, 4))) * (flag * 0.3 + (1 - flag)) - (1400 - manufacturingYear);
     }
 
 
@@ -28,20 +30,20 @@ public class Car extends Good{
         this.price = price;
     }
 
-    public double getUsed() {
-        return used;
+    public double getDistanceTraveled() {
+        return distanceTraveled;
     }
 
-    public void setUsed(double used) {
-        this.used = used;
+    public void setDistanceTraveled(double distanceTraveled) {
+        this.distanceTraveled = distanceTraveled;
     }
 
-    public int getBuiltYear() {
-        return builtYear;
+    public int getManufacturingYear() {
+        return manufacturingYear;
     }
 
-    public void setBuiltYear(int builtYear) {
-        this.builtYear = builtYear;
+    public void setManufacturingYear(int manufacturingYear) {
+        this.manufacturingYear = manufacturingYear;
     }
 
     public boolean isHadAccident() {

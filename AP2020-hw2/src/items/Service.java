@@ -6,7 +6,7 @@ public class Service extends Product{
     /**
      * A subclass of product, should have two subclasses: guarantee and banking
      */
-    private int duration;
+    protected int duration;
 
     public Service(String name, User user) {
         super(name, user);

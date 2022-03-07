@@ -35,7 +35,7 @@ public class Market {
     }
 
 
-    public User getUser(long id){
+    public User getUser(int id){
         for(User user:users){
             if(user.getId()==id)
                 return user;
