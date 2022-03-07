@@ -4,7 +4,6 @@ import items.Good;
 import items.Guarantee;
 import items.Product;
 import items.Service;
-import users.Member;
 import users.User;
 
 import java.util.List;
@@ -35,14 +34,6 @@ public class Market {
 
     }
 
-    public Member getMember(long id){
-
-        for(User member:users){
-            if(member instanceof Member && member.getId()==id)
-                return (Member) member;
-        }
-        return null;
-    }
 
     public User getUser(long id){
         for(User user:users){
