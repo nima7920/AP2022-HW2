@@ -15,20 +15,40 @@ public class Car extends Good{
         this.hadAccident = hadAccident;
     }
 
+
     @Override
     public double getPrice() {
-        return price;
+        int flag = 0;
+        if (hadAccident) flag = 1;
+        return (price / (used / Math.pow(10, 4))) * (flag * 0.3 + (1 - flag)) - (1400 - builtYear);
+    }
+
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public double getUsed() {
         return used;
     }
 
+    public void setUsed(double used) {
+        this.used = used;
+    }
+
     public int getBuiltYear() {
         return builtYear;
     }
 
+    public void setBuiltYear(int builtYear) {
+        this.builtYear = builtYear;
+    }
+
     public boolean isHadAccident() {
         return hadAccident;
+    }
+
+    public void setHadAccident(boolean hadAccident) {
+        this.hadAccident = hadAccident;
     }
 }

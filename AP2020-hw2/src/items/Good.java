@@ -16,4 +16,20 @@ public class Good extends Product {
         super(name, Market.getInstance().getUser(userID));
         this.market.addProduct(this);
     }
+
+    public int getGuaranteeTime() {
+        return guaranteeTime;
+    }
+
+    public void setGuaranteeTime(int guaranteeTime) {
+        this.guaranteeTime = guaranteeTime;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
 }

@@ -25,4 +25,28 @@ public class Display {
     public double getPrice(){
         return 1.5 * getResolution() + 500 * getSurfaceArea();
     }
+
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
+    }
+
+    public double getRatio() {
+        return ratio;
+    }
+
+    public void setRatio(double ratio) {
+        this.ratio = ratio;
+    }
+
+    public double getDensity() {
+        return density;
+    }
+
+    public void setDensity(int density) {
+        this.density = density;
+    }
 }

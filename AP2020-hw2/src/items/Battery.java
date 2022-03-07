@@ -48,3 +48,4 @@ public class Battery {
         return capacity / chargeSpeed;
     }
 }
+

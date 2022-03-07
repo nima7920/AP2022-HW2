@@ -20,4 +20,6 @@ public class Service extends Product{
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+
 }

@@ -14,4 +14,37 @@ public class Property extends Good{
         this.area = area;
         this.userID = userID1;
     }
+
+    @Override
+    public double getPrice() {
+        return Math.pow(10, 10) * this.area * Math.pow(0.98, 1400 - this.builtYear);
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getBuiltYear() {
+        return builtYear;
+    }
+
+    public void setBuiltYear(int builtYear) {
+        this.builtYear = builtYear;
+    }
+
+    public int getArea() {
+        return area;
+    }
+
+    public void setArea(int area) {
+        this.area = area;
+    }
+
+    public long getUserID() {
+        return userID;
+    }
+
+    public void setUserID(long userID) {
+        this.userID = userID;
+    }
 }

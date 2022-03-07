@@ -38,4 +38,36 @@ public class DigitalDevice extends Good{
     public double getBatteryLife(){
         return battery.getCapacity() / (display.getResolution() * .0001);
     }
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
+    public Battery getBattery() {
+        return battery;
+    }
+
+    public void setBattery(Battery battery) {
+        this.battery = battery;
+    }
+
+    public Display getDisplay() {
+        return display;
+    }
+
+    public void setDisplay(Display display) {
+        this.display = display;
+    }
+
+    public DigitalDeviceType getType() {
+        return type;
+    }
+
+    public void setType(DigitalDeviceType type) {
+        this.type = type;
+    }
 }
