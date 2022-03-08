@@ -6,6 +6,7 @@ import items.Product;
 import items.Service;
 import users.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Market {
@@ -31,7 +32,8 @@ public class Market {
     }
 
     private Market(){
-
+        users = new ArrayList<>();
+        products = new ArrayList<>();
     }
 
 
