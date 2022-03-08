@@ -44,7 +44,7 @@ public class Battery {
     public double getPrice(){
         return this.strategy.calculatePrice(this);
     }
-    public double getChargeTime(){
+    public double getChargingTime(){
         return capacity / chargingSpeed;
     }
 }
