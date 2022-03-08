@@ -50,7 +50,7 @@ public class Banking extends Service {
                 break;
             }
             case deposit: {
-                double newCredit = this.user.getCredit() + Math.sqrt(this.user.getCredit()) / accountPrice;
+                double newCredit = this.user.getCredit() + (Math.sqrt(this.user.getCredit()) / accountPrice)+this.duration;
                 this.user.setCredit(newCredit);
                 break;
             }

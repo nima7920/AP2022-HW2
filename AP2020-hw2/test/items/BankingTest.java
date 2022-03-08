@@ -52,8 +52,9 @@ public class BankingTest {
 
         // deposit
         banking.setType(AccountType.deposit);
+        banking.setDuration(100);
         banking.applyProfit();
-        assertEquals(1004.31685959,user.getCredit(),1004.31685959*1e-6);
+        assertEquals(1104.31685959,user.getCredit(),1104.31685959*1e-6);
     }
 
 }
