@@ -1,6 +1,5 @@
 package items;
 
-import market.Market;
 import org.junit.Test;
 import users.User;
 
@@ -14,7 +13,7 @@ public class GuaranteeTest {
 
     @Test
     public void testGuaranteeConstructor(){
-        assertEquals("p", guarantee.getName());
+        assertEquals("g", guarantee.getName());
         assertEquals(user, guarantee.getUser());
         assertEquals("gooood", guarantee.getGood().getName());
         assertEquals("llll", guarantee.getUser().getName());

@@ -1,7 +1,6 @@
 package market;
 
 import items.Good;
-import items.Guarantee;
 import items.Product;
 import items.Service;
 import users.User;

@@ -4,14 +4,14 @@ import users.User;
 
 public class Car extends Good{
 
-    private double price;
+    private double factoryPrice;
     private double distanceTraveled;
     private int manufacturingYear;
     private boolean hadAccident;
 
-    public Car(String name, User user, double price, double distanceTraveled, int manufacturingYear, boolean hadAccident) {
+    public Car(String name, User user, double factoryPrice, double distanceTraveled, int manufacturingYear, boolean hadAccident) {
         super(name, user);
-        this.price = price;
+        this.factoryPrice = factoryPrice;
         this.distanceTraveled = distanceTraveled;
         this.manufacturingYear = manufacturingYear;
         this.hadAccident = hadAccident;
@@ -22,12 +22,19 @@ public class Car extends Good{
     public double getPrice() {
         int flag = 0;
         if (hadAccident) flag = 1;
-        return (price / (distanceTraveled / Math.pow(10, 4))) * (flag * 0.3 + (1 - flag)) - (1400 - manufacturingYear);
+        return (factoryPrice / (distanceTraveled / Math.pow(10, 4))) * (flag * 0.3 + (1 - flag)) - (1400 - manufacturingYear);
     }
 
+    public double getFactoryPrice() {
+        return factoryPrice;
+    }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setFactoryPrice(double factoryPrice) {
+        this.factoryPrice = factoryPrice;
+    }
+
+    public void setPrice(int factoryPrice) {
+        this.factoryPrice = factoryPrice;
     }
 
     public double getDistanceTraveled() {
