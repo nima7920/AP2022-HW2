@@ -2,13 +2,16 @@ package items;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import users.User;
 
 import static org.junit.Assert.*;
 // one test
 public class ServiceTest {
-
+    @Rule
+    public Timeout time = Timeout.millis(2000);
     @Test
     public void serviceTest() {
         Service service=new Service("cleaning",new User("cleaner",9911));

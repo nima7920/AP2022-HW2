@@ -1,6 +1,8 @@
 package items;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import users.User;
 
 import static org.junit.Assert.*;
@@ -8,7 +10,8 @@ import static org.junit.Assert.*;
 public class BankingTest {
 
     private Banking banking;
-
+    @Rule
+    public Timeout time = Timeout.millis(2000);
     // tests for phase 1
     @Test
     public void bankingConstructorTest() {

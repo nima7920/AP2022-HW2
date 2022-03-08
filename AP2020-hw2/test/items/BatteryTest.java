@@ -1,6 +1,8 @@
 package items;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import static org.junit.Assert.*;
 
@@ -20,6 +22,8 @@ public class BatteryTest {
         }
     };
     private final Battery battery = new Battery(2000, 200, 3, strategy);
+    @Rule
+    public Timeout time = Timeout.millis(2000);
     @Test
     public void testBatteryConstructor() {
         assertEquals(2000, battery.getCapacity(), 2000 * 1e-6);

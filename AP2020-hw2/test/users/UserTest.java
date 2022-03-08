@@ -2,13 +2,17 @@ package users;
 
 import items.*;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import static org.junit.Assert.*;
 
 public class UserTest {
     private static User user;
     private static User user2;
+    @Rule
+    public Timeout time = Timeout.millis(2000);
 
     @BeforeClass
     public static void addProducts(){

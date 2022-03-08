@@ -3,7 +3,9 @@ package market;
 import items.*;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import users.User;
 
 import static org.junit.Assert.*;
@@ -13,6 +15,8 @@ public class MarketTest {
     private static Market market = Market.getInstance();
     private static User nimaA, lachin, iman, kasra, nimaK;
     private static Product car1, car2, banking1, banking2;
+    @Rule
+    public Timeout time = Timeout.millis(2000);
 
     @BeforeClass
     public static void initializeMarket() {

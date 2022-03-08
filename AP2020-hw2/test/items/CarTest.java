@@ -1,7 +1,9 @@
 package items;
 
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import users.User;
 
 import static org.junit.Assert.*;
@@ -10,7 +12,8 @@ public class CarTest {
 
     private static User user;
     private static Car car, car2, car3;
-
+    @Rule
+    public Timeout time = Timeout.millis(2000);
 
     @BeforeClass
     public static void addProducts(){

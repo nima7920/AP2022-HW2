@@ -1,6 +1,8 @@
 package items;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import users.User;
 
 import static org.junit.Assert.*;
@@ -10,6 +12,8 @@ public class GuaranteeTest {
     private User user = new User("llll", 3423423L);
     private Good good = new Good("gooood", user);
     private Guarantee guarantee = new Guarantee("g", good, user);
+    @Rule
+    public Timeout time = Timeout.millis(2000);
 
     @Test
     public void testGuaranteeConstructor(){
