@@ -21,6 +21,20 @@ public class GuaranteeTest {
         assertTrue(guarantee instanceof Service);
     }
 
+    @Test
+    public void testGetPriceInGuarantee(){
+        guarantee.setDuration(101);
+        checkDouble(calcPrice(guarantee), guarantee.getPrice());
+    }
+
+    private double  calcPrice(Guarantee guarantee) {
+        return guarantee.getGood().getPrice() * guarantee.getDuration() * Math.pow(10, -3);
+    }
+
+    private void checkDouble(double expected, double actual){
+        assertEquals(expected, actual, expected * 1e-6);
+    }
+
 
 
 }
