@@ -6,6 +6,9 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 import users.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class CarTest {
@@ -25,6 +28,9 @@ public class CarTest {
 
     @Test
     public void testCarConstructor(){
+        List list = new ArrayList();
+        list.add(car);
+        assertTrue(list.get(0) instanceof Good);
         assertEquals("emma", car.getUser().getName());
         assertEquals("carnamee", car.getName());
         assertEquals(user, car.getUser());

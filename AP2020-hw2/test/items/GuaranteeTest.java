@@ -5,6 +5,9 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 import users.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class GuaranteeTest {
@@ -17,11 +20,14 @@ public class GuaranteeTest {
 
     @Test
     public void testGuaranteeConstructor(){
+        List list = new ArrayList();
+        list.add(guarantee);
+        assertTrue(list.get(0) instanceof Service);
         assertEquals("g", guarantee.getName());
         assertEquals(user, guarantee.getUser());
         assertEquals("gooood", guarantee.getGood().getName());
         assertEquals("llll", guarantee.getUser().getName());
-        assertTrue(guarantee instanceof Service);
+
     }
 
     @Test

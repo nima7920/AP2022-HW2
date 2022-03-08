@@ -19,7 +19,9 @@ public class EducationalMaterialTest {
     public void testEducationalMaterialConstructor() {
         EducationalMaterial material = new EducationalMaterial("material",user
                 , 12.5, new ArrayList<>(), 1300);
-        assertTrue(material instanceof Good);
+        List list = new ArrayList();
+        list.add(material);
+        assertTrue(list.get(0) instanceof Good);
         assertEquals("material", material.getName());
         assertEquals("Mr.Bean", material.getUser().getName());
         assertEquals(material.getUser(), user);

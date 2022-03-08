@@ -5,6 +5,9 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 import users.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 // 3 tests
 public class BankingTest {
@@ -16,7 +19,9 @@ public class BankingTest {
     @Test
     public void bankingConstructorTest() {
         banking = new Banking("Maskan", new User("Nima", 1100));
-        assertTrue(banking instanceof Service);
+        List list = new ArrayList();
+        list.add(banking);
+        assertTrue(list.get(0) instanceof Service);
         assertEquals("Maskan",banking.getName());
         assertEquals("Nima",banking.getUser().getName());
     }

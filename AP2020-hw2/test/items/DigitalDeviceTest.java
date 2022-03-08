@@ -5,6 +5,9 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 import users.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 // 4 tests
 public class DigitalDeviceTest {
@@ -20,7 +23,9 @@ public class DigitalDeviceTest {
     public Timeout time = new Timeout(2000);
     @Test
     public void testDigitalDeviceConstructor() {
-        assertTrue(laptop instanceof Good);
+        List list = new ArrayList();
+        list.add(laptop);
+        assertTrue(list.get(0) instanceof Good);
         assertEquals("laptop", laptop.getName());
         assertEquals(user, laptop.getUser());
         assertEquals(battery, laptop.getBattery());
