@@ -5,8 +5,7 @@ import users.User;
 public class Banking extends Service {
 
     private AccountType type;
-    private float ratio;
-    private float currentCredit = 0;
+    private double ratio;
     private double accountPrice;
 
     public Banking(String name, User user) {
@@ -22,7 +21,7 @@ public class Banking extends Service {
         this.type = type;
     }
 
-    public float getRatio() {
+    public double getRatio() {
         return ratio;
     }
 
