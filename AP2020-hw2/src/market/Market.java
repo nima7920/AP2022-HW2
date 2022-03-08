@@ -99,4 +99,12 @@ public class Market {
         product.getUser().setCredit(product.getUser().getCredit() + product.getPrice());
         product.setUser(buyer);
     }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
 }
