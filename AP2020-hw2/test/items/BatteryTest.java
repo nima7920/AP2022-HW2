@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+// 3 tests
 public class BatteryTest {
     private BatteryPriceStrategy strategy = new BatteryPriceStrategy(){
         @Override

@@ -46,6 +46,7 @@ public class MarketTest {
         ((Banking) banking2).setAccountPrice(100);
     }
 
+// 5 tests
 
     @Test
     @Ignore

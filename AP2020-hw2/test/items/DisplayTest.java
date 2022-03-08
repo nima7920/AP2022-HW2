@@ -3,7 +3,7 @@ package items;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+// 2 tests
 public class DisplayTest {
     private Display display = new Display(10, 1.5, 20);
     @Test

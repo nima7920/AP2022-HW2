@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
-
+// 2 tests
 public class EducationalMaterialTest {
     private List<EducationalMaterial> materialList;
     private User user = new User("Mr.Bean", 123321);

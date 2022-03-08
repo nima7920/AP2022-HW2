@@ -4,7 +4,7 @@ import org.junit.Test;
 import users.User;
 
 import static org.junit.Assert.*;
-
+// 4 tests
 public class DigitalDeviceTest {
     private User user = new User("Mr.Smith", 1234);
     private Battery battery = new Battery(1000, 12, 3, new BatteryPriceStrategy());
