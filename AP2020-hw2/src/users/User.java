@@ -72,5 +72,6 @@ public class User {
         for(Product product:cart){
             Market.getInstance().purchaseProduct(this,product);
         }
+        this.cart.clear();
     }
 }
