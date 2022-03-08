@@ -2,6 +2,7 @@ package market;
 
 import items.*;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import users.User;
@@ -10,12 +11,12 @@ import static org.junit.Assert.*;
 
 public class MarketTest {
 
-    private Market market = Market.getInstance();
-    private User nimaA, lachin, iman, kasra, nimaK;
-    private Product car1, car2, banking1, banking2;
+    private static Market market = Market.getInstance();
+    private static User nimaA, lachin, iman, kasra, nimaK;
+    private static Product car1, car2, banking1, banking2;
 
-    @Before
-    public void initializeMarket() {
+    @BeforeClass
+    public static void initializeMarket() {
         // initializing users
         nimaA = new User("Nima.a", 9308747682L);
         nimaA.setCredit(1000);
@@ -46,14 +47,13 @@ public class MarketTest {
     }
 
     @Test
-    @Ignore
     public void addProductTest() {
         assertEquals(4, market.getProducts().size());
     }
 
     @Test
     public void addUserTest() {
-//        assertEquals(5, market.getUsers().size());
+        assertEquals(5, market.getUsers().size());
 //        System.out.println(market.getUsers().get(0).getName());
 //        System.out.println(market.getUsers().get(1).getName());
 //        System.out.println(market.getUsers().get(2).getName());
@@ -117,6 +117,7 @@ public class MarketTest {
         assertEquals("Iman", car1.getUser().getName());
         assertEquals(1000 + p1, nimaA.getCredit(), (100 + p1) * 1e-6);
         assertEquals(5500, lachin.getCredit(), 5500 * 1e-6);
-
+        market.purchaseProduct(nimaA, car1);
+        market.purchaseProduct(lachin, banking1);
     }
 }
