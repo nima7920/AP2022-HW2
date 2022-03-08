@@ -26,17 +26,6 @@ public class Battery {
         return lifeSpan;
     }
 
-    public void setCapacity(double capacity) {
-        this.capacity = capacity;
-    }
-
-    public void setChargingSpeed(double chargingSpeed) {
-        this.chargingSpeed = chargingSpeed;
-    }
-
-    public void setLifeSpan(int lifeSpan) {
-        this.lifeSpan = lifeSpan;
-    }
 
     public void setStrategy(BatteryPriceStrategy strategy) {
         this.strategy = strategy;

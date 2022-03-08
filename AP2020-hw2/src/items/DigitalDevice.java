@@ -69,7 +69,4 @@ public class DigitalDevice extends Good{
         return type;
     }
 
-    public void setType(DigitalDeviceType type) {
-        this.type = type;
-    }
 }
