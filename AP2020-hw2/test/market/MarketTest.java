@@ -52,12 +52,6 @@ public class MarketTest {
 // 5 tests
 
     @Test
-    @Ignore
-    public void addProductTest() {
-        assertEquals(4, market.getProducts().size());
-    }
-
-    @Test
     public void addUserTest() {
         assertEquals(5, market.getUsers().size());
 //        System.out.println(market.getUsers().get(0).getName());
