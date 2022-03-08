@@ -32,8 +32,8 @@ public class Market {
     }
 
     private Market(){
-        users=new ArrayList<User>();
-        products=new ArrayList<Product>();
+        users = new ArrayList<>();
+        products = new ArrayList<>();
     }
 
 
