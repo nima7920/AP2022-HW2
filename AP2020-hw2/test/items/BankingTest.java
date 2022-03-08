@@ -54,6 +54,7 @@ public class BankingTest {
         banking.setType(AccountType.deposit);
         banking.setDuration(100);
         banking.applyProfit();
+
         assertEquals(1104.31685959,user.getCredit(),1104.31685959*1e-6);
     }
 
