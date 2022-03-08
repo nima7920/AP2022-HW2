@@ -17,6 +17,5 @@ public class ServiceTest {
         assertEquals(100,service.getDuration());
         assertEquals("cleaning",service.getName());
         assertEquals("cleaner",service.getUser().getName());
-
     }
 }
