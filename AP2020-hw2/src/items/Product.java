@@ -37,7 +37,7 @@ public class Product {
         this.user = user;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
