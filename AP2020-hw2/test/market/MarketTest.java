@@ -2,6 +2,7 @@ package market;
 
 import items.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import users.User;
 
@@ -44,10 +45,11 @@ public class MarketTest {
         ((Banking) banking2).setAccountPrice(100);
     }
 
-//    @Test
-//    public void addProductTest() {
-//        assertEquals(4, market.getProducts().size());
-//    }
+    @Test
+    @Ignore
+    public void addProductTest() {
+        assertEquals(4, market.getProducts().size());
+    }
 
     @Test
     public void addUserTest() {
