@@ -13,7 +13,7 @@ public class GuaranteeTest {
     private Good good = new Good("gooood", user);
     private Guarantee guarantee = new Guarantee("g", good, user);
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
 
     @Test
     public void testGuaranteeConstructor(){

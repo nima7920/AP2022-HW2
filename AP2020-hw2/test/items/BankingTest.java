@@ -11,7 +11,7 @@ public class BankingTest {
 
     private Banking banking;
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
     // tests for phase 1
     @Test
     public void bankingConstructorTest() {

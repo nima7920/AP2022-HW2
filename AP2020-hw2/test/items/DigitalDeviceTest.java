@@ -17,7 +17,7 @@ public class DigitalDeviceTest {
     private DigitalDevice smartWatch = new DigitalDevice("smartWatch", user, 10, battery, display, DigitalDeviceType.smartWatch);
     private DigitalDevice phone = new DigitalDevice("phone", user, 10, battery, display, DigitalDeviceType.phone);
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
     @Test
     public void testDigitalDeviceConstructor() {
         assertTrue(laptop instanceof Good);

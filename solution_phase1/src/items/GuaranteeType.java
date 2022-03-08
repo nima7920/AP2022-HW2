@@ -1,7 +1,7 @@
 package items;
 
 public enum GuaranteeType {
-    DigitalDevice,
-    Property,
+    digitalDevice,
+    property,
     car;
 }

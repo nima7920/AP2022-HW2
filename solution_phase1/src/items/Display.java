@@ -6,7 +6,7 @@ public class Display {
     private double ratio;
     private double density;
 
-    public Display(double size, double ratio, int density) {
+    public Display(double size, double ratio, double density) {
         this.size = size;
         this.ratio = ratio;
         this.density = density;
@@ -30,23 +30,12 @@ public class Display {
         return size;
     }
 
-    public void setSize(double size) {
-        this.size = size;
-    }
-
     public double getRatio() {
         return ratio;
-    }
-
-    public void setRatio(double ratio) {
-        this.ratio = ratio;
     }
 
     public double getDensity() {
         return density;
     }
 
-    public void setDensity(int density) {
-        this.density = density;
-    }
 }

@@ -13,7 +13,7 @@ public class CarTest {
     private static User user;
     private static Car car, car2, car3;
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
 
     @BeforeClass
     public static void addProducts(){

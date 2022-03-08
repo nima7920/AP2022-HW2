@@ -14,7 +14,7 @@ public class EducationalMaterialTest {
     private List<EducationalMaterial> materialList;
     private User user = new User("Mr.Bean", 123321);
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
     @Test
     public void testEducationalMaterialConstructor() {
         EducationalMaterial material = new EducationalMaterial("material",user

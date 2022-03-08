@@ -1,17 +1,19 @@
 package items;
 
+import users.User;
+
 public class Car extends Good{
 
-    private double price;
-    private double used;
-    private int builtYear;
+    private double factoryPrice;
+    private double distanceTraveled;
+    private int manufacturingYear;
     private boolean hadAccident;
 
-    public Car(String name, long userID, double price, double used, int builtYear, boolean hadAccident) {
-        super(name, userID);
-        this.price = price;
-        this.used = used;
-        this.builtYear = builtYear;
+    public Car(String name, User user, double factoryPrice, double distanceTraveled, int manufacturingYear, boolean hadAccident) {
+        super(name, user);
+        this.factoryPrice = factoryPrice;
+        this.distanceTraveled = distanceTraveled;
+        this.manufacturingYear = manufacturingYear;
         this.hadAccident = hadAccident;
     }
 
@@ -20,28 +22,35 @@ public class Car extends Good{
     public double getPrice() {
         int flag = 0;
         if (hadAccident) flag = 1;
-        return (price / (used / Math.pow(10, 4))) * (flag * 0.3 + (1 - flag)) - (1400 - builtYear);
+        return (factoryPrice / (distanceTraveled / Math.pow(10, 4))) * (flag * 0.3 + (1 - flag)) - (1400 - manufacturingYear);
     }
 
-
-    public void setPrice(int price) {
-        this.price = price;
+    public double getFactoryPrice() {
+        return factoryPrice;
     }
 
-    public double getUsed() {
-        return used;
+    public void setFactoryPrice(double factoryPrice) {
+        this.factoryPrice = factoryPrice;
     }
 
-    public void setUsed(double used) {
-        this.used = used;
+    public void setPrice(int factoryPrice) {
+        this.factoryPrice = factoryPrice;
     }
 
-    public int getBuiltYear() {
-        return builtYear;
+    public double getDistanceTraveled() {
+        return distanceTraveled;
     }
 
-    public void setBuiltYear(int builtYear) {
-        this.builtYear = builtYear;
+    public void setDistanceTraveled(double distanceTraveled) {
+        this.distanceTraveled = distanceTraveled;
+    }
+
+    public int getManufacturingYear() {
+        return manufacturingYear;
+    }
+
+    public void setManufacturingYear(int manufacturingYear) {
+        this.manufacturingYear = manufacturingYear;
     }
 
     public boolean isHadAccident() {

@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 // one test
 public class ServiceTest {
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
     @Test
     public void serviceTest() {
         Service service=new Service("cleaning",new User("cleaner",9911));

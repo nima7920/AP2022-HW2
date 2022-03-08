@@ -2,14 +2,14 @@ package items;
 
 public class Battery {
     private double capacity;
-    private double chargeSpeed;
-    private int lifeTime;
+    private double chargingSpeed;
+    private int lifeSpan;
     private BatteryPriceStrategy strategy;
 
-    public Battery(double capacity, double chargeSpeed, int lifeTime, BatteryPriceStrategy strategy) {
+    public Battery(double capacity, double chargingSpeed, int lifeSpan, BatteryPriceStrategy strategy) {
         this.capacity = capacity;
-        this.chargeSpeed = chargeSpeed;
-        this.lifeTime = lifeTime;
+        this.chargingSpeed = chargingSpeed;
+        this.lifeSpan = lifeSpan;
         this.strategy = strategy;
     }
 
@@ -18,25 +18,14 @@ public class Battery {
         return capacity;
     }
 
-    public double getChargeSpeed() {
-        return chargeSpeed;
+    public double getChargingSpeed() {
+        return chargingSpeed;
     }
 
-    public int getLifeTime() {
-        return lifeTime;
+    public int getLifeSpan() {
+        return lifeSpan;
     }
 
-    public void setCapacity(double capacity) {
-        this.capacity = capacity;
-    }
-
-    public void setChargeSpeed(double chargeSpeed) {
-        this.chargeSpeed = chargeSpeed;
-    }
-
-    public void setLifeTime(int lifeTime) {
-        this.lifeTime = lifeTime;
-    }
 
     public void setStrategy(BatteryPriceStrategy strategy) {
         this.strategy = strategy;
@@ -44,8 +33,8 @@ public class Battery {
     public double getPrice(){
         return this.strategy.calculatePrice(this);
     }
-    public double getChargeTime(){
-        return capacity / chargeSpeed;
+    public double getChargingTime(){
+        return capacity / chargingSpeed;
     }
 }
 

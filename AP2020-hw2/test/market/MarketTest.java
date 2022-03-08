@@ -16,7 +16,7 @@ public class MarketTest {
     private static User nimaA, lachin, iman, kasra, nimaK;
     private static Product car1, car2, banking1, banking2;
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
 
     @BeforeClass
     public static void initializeMarket() {

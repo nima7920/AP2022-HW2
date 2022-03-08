@@ -13,7 +13,7 @@ public class ProductTest {
     private Product product = new Product("p", user);
     private Product product2 = new Product("p2", user);
     @Rule
-    public Timeout time = Timeout.millis(2000);
+    public Timeout time = new Timeout(2000);
     @Test
     public void testProductConstructor(){
         assertEquals("p", product.getName());

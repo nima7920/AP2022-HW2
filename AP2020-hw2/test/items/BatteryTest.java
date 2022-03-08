@@ -8,6 +8,9 @@ import static org.junit.Assert.*;
 
 // 3 tests
 public class BatteryTest {
+    @Rule
+    public Timeout time = new Timeout(2000);
+
     private BatteryPriceStrategy strategy = new BatteryPriceStrategy(){
         @Override
         public double calculatePrice(Battery battery){
@@ -22,8 +25,9 @@ public class BatteryTest {
         }
     };
     private final Battery battery = new Battery(2000, 200, 3, strategy);
-    @Rule
-    public Timeout time = Timeout.millis(2000);
+
+
+
     @Test
     public void testBatteryConstructor() {
         assertEquals(2000, battery.getCapacity(), 2000 * 1e-6);

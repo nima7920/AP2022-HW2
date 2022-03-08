@@ -6,21 +6,14 @@ import users.User;
 public class Product {
     protected String name;
     protected User user;
-    protected long id;
+    protected int id;
     protected Market market=Market.getInstance();
-
+    protected static int marketCount = 1000 * 1000;
     public Product(String name,User user) {
-        if(name.length()<1 || name.length()>80){
-            System.out.println("Invalid Product name");
-            return;
-        }
+        market.addProduct(this);
         this.name = name;
         this.user=user;
-        generateID();
-    }
-
-    private void generateID(){
-        this.id=System.nanoTime();
+        this.id = marketCount++;
     }
 
     public double getPrice(){
@@ -44,12 +37,9 @@ public class Product {
         this.user = user;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
 }

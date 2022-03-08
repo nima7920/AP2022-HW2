@@ -1,12 +1,11 @@
 package market;
 
 import items.Good;
-import items.Guarantee;
 import items.Product;
 import items.Service;
-import users.Member;
 import users.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Market {
@@ -25,74 +24,75 @@ public class Market {
      */
     private static Market market;
 
-    public static Market getInstance(){
-        if(market==null)
-            market=new Market();
+    public static Market getInstance() {
+        if (market == null)
+            market = new Market();
         return market;
     }
 
-    private Market(){
-
+    private Market() {
+        users = new ArrayList<User>();
+        products = new ArrayList<Product>();
     }
 
-    public Member getMember(long id){
 
-        for(User member:users){
-            if(member instanceof Member && member.getId()==id)
-                return (Member) member;
-        }
-        return null;
-    }
-
-    public User getUser(long id){
-        for(User user:users){
-            if(user.getId()==id)
+    public User getUser(int id) {
+        for (User user : users) {
+            if (user.getId() == id)
                 return user;
         }
         return null;
     }
 
-    public Product getProduct(long id){
-        for(Product product:products){
-            if(product.getId()==id)
+    public Product getProduct(long id) {
+        for (Product product : products) {
+            if (product.getId() == id)
                 return product;
         }
         return null;
     }
 
-    public Good getGood(long id){
-        for(Product product:products){
-            if(product instanceof Good && product.getId()==id)
+    public Good getGood(long id) {
+        for (Product product : products) {
+            if (product instanceof Good && product.getId() == id)
                 return ((Good) product);
         }
         return null;
     }
 
-    public Service getService(long id){
-        for(Product product:products){
-            if(product instanceof Service && product.getId()==id)
+    public Service getService(long id) {
+        for (Product product : products) {
+            if (product instanceof Service && product.getId() == id)
                 return ((Service) product);
         }
         return null;
     }
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         this.products.add(product);
     }
-    public void addToCart(int userID, int productID){
+
+    public void addUser(User user) {
+        this.users.add(user);
+    }
+
+    public void addToCart(int userID, int productID) {
         User user = getUser(userID);
         Product product = getProduct(productID);
-        if (user == null || product == null){
-            System.out.println("invalid ID");
-            return;
-        }
-        if (product instanceof Guarantee){
-            Good good = ((Guarantee) product).getGood();
-            if (!user.getCart().contains(good)){
-                System.out.println("product has not been added");
-                return;
-            }
-        }
         user.getCart().add(product);
+    }
+
+    public void purchaseProduct(User buyer, Product product) {
+        buyer.setCredit(buyer.getCredit() - product.getPrice());
+        product.getUser().setCredit(product.getUser().getCredit() + product.getPrice());
+        product.setUser(buyer);
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 }
