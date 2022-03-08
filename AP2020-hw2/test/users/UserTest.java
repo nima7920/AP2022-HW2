@@ -41,7 +41,7 @@ public class UserTest {
     private double calculateUserTotalPrice(User user) {
         double res = 0;
         for (Product product : user.getCart()) {
-            res += product.getPrice();
+             res += product.getPrice();
         }
         return res;
     }
