@@ -86,4 +86,10 @@ public class Market {
         }
         user.getCart().add(product);
     }
+
+    public void purchaseProduct(User buyer,Product product){
+        buyer.setCredit(buyer.getCredit()-product.getPrice());
+        product.getUser().setCredit(product.getUser().getCredit()+product.getPrice());
+        product.setUser(buyer);
+    }
 }

@@ -1,6 +1,7 @@
 package users;
 
 import items.Product;
+import market.Market;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class User {
     protected int id;
     protected List<Product> cart;
     protected static int userCount = 1000 * 1000;
+
     public User(String name, long phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -53,6 +55,7 @@ public class User {
     public List<Product> getCart() {
         return cart;
     }
+
     public double getTotalPrice(){
         double res = 0;
         for (Product product : cart) {
@@ -63,5 +66,11 @@ public class User {
 
     public void setCredit(double credit){
         this.credit=credit;
+    }
+
+    public void purchase(){
+        for(Product product:cart){
+            Market.getInstance().purchaseProduct(this,product);
+        }
     }
 }
