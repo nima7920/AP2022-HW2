@@ -33,16 +33,20 @@ public class BatteryTest {
         assertEquals(2000, battery.getCapacity(), 2000 * 1e-6);
         assertEquals(200, battery.getChargingSpeed(), 200 * 1e-6);
         assertEquals(3, battery.getLifeSpan(), 3 * 1e-6);
+        assertEquals(strategy, battery.getStrategy());
+    }
+
+    @Test
+    public void testBatteryPrice(){
         double expectedPrice = strategy.calculatePrice(battery);
         assertEquals(expectedPrice,battery.getPrice(), expectedPrice * 1e-6);
-
     }
 
     @Test
     public void testBatterySetters() {
         battery.setStrategy(newStrategy);
         double expectedPrice = newStrategy.calculatePrice(battery);
-        assertEquals(expectedPrice,battery.getPrice(), expectedPrice * 1e-6);
+        assertEquals(newStrategy, battery.getStrategy());
     }
 
     @Test

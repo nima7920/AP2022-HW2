@@ -40,6 +40,16 @@ public class CarTest {
         assertTrue(car.isHadAccident());
     }
 
+    @Test
+    public void testCarSettersAndGetters() {
+        Car thisCar = new Car("carnamee", user, 2030, 7, 1394, true);
+        thisCar.setHadAccident(false);
+        thisCar.setDistanceTraveled(2022);
+        assertEquals(false, thisCar.isHadAccident());
+        assertEquals(2022, thisCar.getDistanceTraveled(), 2022*1e-6);
+
+    }
+
     private void checkDouble(double expected, double actual){
         assertEquals(expected, actual, expected * 1e-6);
     }

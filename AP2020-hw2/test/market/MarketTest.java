@@ -2,7 +2,6 @@ package market;
 
 import items.*;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -39,14 +38,11 @@ public class MarketTest {
         market.addUser(nimaK);
 
         // initializing products
-        car1 = new Car("BMW", nimaA, 2000, 0, 1395, false);
-        ((Car) car1).setPrice(1000);
-        banking1 = new Banking("Melli", lachin);
-        ((Banking) banking1).setAccountPrice(500);
-        car2 = new Car("Chevrolet", iman, 3000, 50, 1390, true);
-        ((Car) car2).setPrice(1500);
-        banking2 = new Banking("Maskan", kasra);
-        ((Banking) banking2).setAccountPrice(100);
+        car1 = new Car("BMW", nimaA, 1000, 0, 1395, false);
+        banking1 = new Service("Melli", lachin);
+        car2 = new Car("Chevrolet", iman, 1500, 50, 1390, true);
+        banking2 = new Service("Maskan", kasra);
+
     }
 
 // 5 tests
@@ -116,7 +112,7 @@ public class MarketTest {
         assertEquals(7000 - p1 - 500, iman.getCredit(), (7000 - p1 - 500) * 1e-6);
         assertEquals("Iman", car1.getUser().getName());
         assertEquals(1000 + p1, nimaA.getCredit(), (100 + p1) * 1e-6);
-        assertEquals(5500, lachin.getCredit(), 5500 * 1e-6);
+        assertEquals(5000, lachin.getCredit(), 5000 * 1e-6);
         market.purchaseProduct(nimaA, car1);
         market.purchaseProduct(lachin, banking1);
     }

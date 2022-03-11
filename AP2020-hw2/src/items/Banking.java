@@ -8,10 +8,14 @@ public class Banking extends Service {
     private double ratio;
     private double accountPrice;
 
-    public Banking(String name, User user) {
+//    public Banking(String name, User user) {
+//        super(name, user);
+//    }
+    public Banking(String name,User user, AccountType type,double ratio){
         super(name, user);
+        this.type = type;
+        this.ratio = ratio;
     }
-
 
     public AccountType getType() {
         return type;
@@ -46,7 +50,7 @@ public class Banking extends Service {
                 break;
             }
             case saving: {
-                this.user.setCredit(this.user.getCredit() + (0.04 * accountPrice));
+                this.user.setCredit(this.user.getCredit() + (accountPrice * 0.02 * duration));
                 break;
             }
             case deposit: {

@@ -36,5 +36,9 @@ public class Battery {
     public double getChargingTime(){
         return capacity / chargingSpeed;
     }
+
+    public BatteryPriceStrategy getStrategy() {
+        return strategy;
+    }
 }
 

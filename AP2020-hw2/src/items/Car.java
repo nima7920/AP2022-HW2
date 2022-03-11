@@ -29,13 +29,6 @@ public class Car extends Good{
         return factoryPrice;
     }
 
-    public void setFactoryPrice(double factoryPrice) {
-        this.factoryPrice = factoryPrice;
-    }
-
-    public void setPrice(int factoryPrice) {
-        this.factoryPrice = factoryPrice;
-    }
 
     public double getDistanceTraveled() {
         return distanceTraveled;
